@@ -1,0 +1,16 @@
+{%- comment -%} ORÍKÌ default page — renders country content by handle, else page.content {%- endcomment -%}
+{%- case page.handle -%}
+  {%- when 'nigeria' -%}{%- render 'country-nigeria' -%}
+  {%- when 'kenya' -%}{%- render 'country-kenya' -%}
+  {%- when 'uganda' -%}{%- render 'country-uganda' -%}
+  {%- when 'abu-dhabi' -%}{%- render 'country-abu-dhabi' -%}
+  {%- else -%}
+    <section class="sec"><div class="wrap" style="max-width:860px">
+      {%- if page.title != blank -%}<h1 style="font-family:var(--serif);font-size:clamp(2.2rem,5vw,3.4rem);margin-bottom:18px">{{ page.title | escape }}</h1>{%- endif -%}
+      <div class="rte">{{ page.content }}</div>
+    </div></section>
+{%- endcase -%}
+
+{% schema %}
+{"name":"ORÍKÌ Page","settings":[]}
+{% endschema %}
