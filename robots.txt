@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://oriki-cyan.vercel.app/sitemap.xml
