@@ -144,7 +144,7 @@
 <section class="sec" id="blog" style="background:var(--sand)"><div class="wrap">
   <div class="sec-head reveal"><span class="eyebrow">The Journal</span><h2>Wellness notes &amp; rituals.</h2></div>
   <div class="bloggrid reveal">
-  {%- assign jb = blogs['news'] | default: blogs.first -%}
+  {%- assign jb = blogs['the-oriki-blog'] | default: blogs['news'] | default: blogs.first -%}
   {%- for article in jb.articles limit: 3 -%}
     <a class="post" href="{{ article.url }}"><div class="pimg">{% if article.image %}{{ article.image | image_url: width: 600 | image_tag: loading: 'lazy', alt: article.title }}{% endif %}</div><div class="pc"><span class="cat">{{ article.tags.first | default: 'Journal' }}</span><h3>{{ article.title }}</h3><span class="rm">Read article →</span></div></a>
   {%- endfor -%}
