@@ -1,13 +1,23 @@
-{%- comment -%} ORÍKÌ default page — renders country content by handle, else page.content {%- endcomment -%}
+{%- comment -%} ORÍKÌ default page — routes designed pages by handle, styled fallback otherwise {%- endcomment -%}
 {%- case page.handle -%}
   {%- when 'nigeria' -%}{%- render 'country-nigeria' -%}
   {%- when 'kenya' -%}{%- render 'country-kenya' -%}
   {%- when 'uganda' -%}{%- render 'country-uganda' -%}
   {%- when 'abu-dhabi' -%}{%- render 'country-abu-dhabi' -%}
+  {%- when 'the-oriki-story' -%}{%- render 'page-story' -%}
+  {%- when 'the-oriki-philosophy' -%}{%- render 'page-philosophy' -%}
+  {%- when 'lineage' -%}{%- render 'page-lineage' -%}
+  {%- when 'oriki-membership' -%}{%- render 'page-membership' -%}
+  {%- when 'wellness-spas' -%}{%- render 'page-spas' -%}
+  {%- when 'our-brands' -%}{%- render 'page-brands' -%}
   {%- else -%}
-    <section class="sec"><div class="wrap" style="max-width:860px">
-      {%- if page.title != blank -%}<h1 style="font-family:var(--serif);font-size:clamp(2.2rem,5vw,3.4rem);margin-bottom:18px">{{ page.title | escape }}</h1>{%- endif -%}
-      <div class="rte">{{ page.content }}</div>
+    <section class="sec pagewrap-sec"><div class="wrap">
+      <article class="pagewrap">
+        {%- if page.title != blank -%}
+          <header class="pagewrap-head"><span class="eyebrow">ORÍKÌ</span><h1>{{ page.title | escape }}</h1></header>
+        {%- endif -%}
+        <div class="rte">{{ page.content }}</div>
+      </article>
     </div></section>
 {%- endcase -%}
 
