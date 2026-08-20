@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "main": {
+      "type": "oriki-home",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

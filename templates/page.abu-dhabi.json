@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "main": {
+      "type": "oriki-abu-dhabi",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

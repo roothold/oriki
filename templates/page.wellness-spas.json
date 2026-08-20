@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "main": {
+      "type": "oriki-spas",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

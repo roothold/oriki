@@ -1,0 +1,13 @@
+{
+  "name": "Header",
+  "type": "header",
+  "sections": {
+    "oriki-header": {
+      "type": "oriki-header",
+      "settings": {}
+    }
+  },
+  "order": [
+    "oriki-header"
+  ]
+}

@@ -1,0 +1,176 @@
+<section class="hero">
+  <div class="bg">
+    <img src="{{ 'heroBeauty-800.jpg' | asset_url }}" width="800" height="533" loading="eager" decoding="async" fetchpriority="high" data-hero-slide style="position:absolute;inset:0;opacity:1;transition:opacity 1.2s" alt=""><img src="{{ 'wellness-800.jpg' | asset_url }}" width="800" height="1009" loading="lazy" decoding="async" data-hero-slide style="position:absolute;inset:0;opacity:0;transition:opacity 1.2s" alt=""><img src="{{ 'massage-800.jpg' | asset_url }}" width="800" height="533" loading="lazy" decoding="async" data-hero-slide style="position:absolute;inset:0;opacity:0;transition:opacity 1.2s" alt="">
+  </div>
+  <div class="inner">
+    <span class="eyebrow">ORÍKÌ — Your Crown</span>
+    <h1>African beauty, redefined.</h1>
+    <p class="sub">Farm-to-skin skincare and luxury wellness spas, crafted from the richest resource continent on earth.</p>
+    <div class="cta">
+      <a class="btn btn-terra" href="https://oriki.zenoti.com/webstoreNew/services" target="_blank" rel="noopener">Book a Treatment</a>
+      <a class="btn btn-light" href="/collections/all">Shop ORÍKÌ</a>
+    </div>
+  </div>
+  <div class="hero-dots"><i class="on"></i><i class=""></i><i class=""></i></div>
+</section>
+
+<div class="trust"><div class="row">
+  <div class="t"><svg viewBox="0 0 24 24"><path d="M5 19c8 0 14-5 14-14C9 5 5 11 5 19z"/><path d="M5 19c2-5 6-8 10-9"/></svg> Farm to Skin</div>
+  <div class="t"><svg viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg> 100% Natural</div>
+  <div class="t"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.5-9-9C1.5 7 4 4 7 4c2 0 3.5 1.5 5 3 1.5-1.5 3-3 5-3 3 0 5.5 3 4 7-2 4.5-9 9-9 9z"/></svg> Cruelty-Free</div>
+  <div class="t"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg> Made in Africa</div>
+  <div class="t"><svg viewBox="0 0 24 24"><path d="M12 22s7-6 7-12a7 7 0 0 0-14 0c0 6 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> 4 Countries</div>
+  <div class="t"><svg viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg> 15+ Luxury Spas</div>
+</div></div>
+
+<section class="sec" id="experience"><div class="wrap">
+  <div class="sec-head reveal">
+    <span class="eyebrow">Experience ORÍKÌ</span>
+    <h2>Indulge in the ultimate relaxation.</h2>
+    <p>An absolute sensory experience that awakens all five senses — because just like our name, we treat you like royalty.</p>
+  </div>
+  <div class="hscroll reveal">
+    <a class="xcard" href="#"><img src="{{ 'massage-800.jpg' | asset_url }}" width="800" height="533" loading="lazy" decoding="async" alt="Book A Treatment"><div class="cap"><h3>Book A Treatment</h3><span>Reserve your ritual →</span></div></a><a class="xcard" href="#"><img src="{{ 'wellness-800.jpg' | asset_url }}" width="800" height="1009" loading="lazy" decoding="async" alt="Monthly Membership"><div class="cap"><h3>Monthly Membership</h3><span>Wellness, every month →</span></div></a><a class="xcard" href="#"><img src="{{ 'smile-800.jpg' | asset_url }}" width="800" height="533" loading="lazy" decoding="async" alt="Join ORÍKÌ Rewards"><div class="cap"><h3>Join ORÍKÌ Rewards</h3><span>Earn as you glow →</span></div></a><a class="xcard" href="#"><img src="{{ 'face-800.jpg' | asset_url }}" width="800" height="1200" loading="lazy" decoding="async" alt="ORÍKÌ Face Guide"><div class="cap"><h3>ORÍKÌ Face Guide</h3><span>Find your routine →</span></div></a>
+  </div>
+</div></section>
+
+<section class="sec" id="shop" style="background:var(--sand)"><div class="wrap">
+  <div class="sec-head reveal"><span class="eyebrow">Shop ORÍKÌ</span><h2>Best-selling rituals.</h2><p>Potent natural actives fused with science — minimalist skincare that rejuvenates, replenishes and glows.</p></div>
+  <div class="prodrow reveal">
+  {%- assign fc = collections['bestsellers'] | default: collections.all -%}
+  {%- for product in fc.products limit: 5 -%}
+    <div class="prod"><div class="ph">{%- if product.tags contains 'Bestseller' or product.tags contains 'Besteller' -%}<span class="tag">Bestseller</span>{%- endif -%}<a href="{{ product.url }}">{{ product.featured_image | image_url: width: 600 | image_tag: loading: 'lazy', widths: '300, 600', alt: product.title }}</a></div>
+    <div class="pb"><h3><a href="{{ product.url }}">{{ product.title }}</a></h3><span class="price">{{ product.price | money }}</span><a class="btn btn-primary add" href="{{ product.url }}">View Product</a></div></div>
+  {%- endfor -%}
+  </div>
+  <div style="text-align:center;margin-top:34px" class="reveal"><a class="btn btn-ghost" href="/collections/all">View All Products</a></div>
+</div></section>
+
+<section class="sec journeys" id="journeys"><div class="wrap">
+  <div class="sec-head reveal">
+    <span class="eyebrow">Signature Wellness Journeys</span>
+    <h2>Escapes worth travelling for.</h2>
+    <p>Curated spa journeys that awaken all five senses — book a single ritual or a full day of renewal.</p>
+  </div>
+  <div class="jrow reveal">
+    
+    <a class="journey" href="#"><img src="{{ 'massage-800.jpg' | asset_url }}" width="800" height="533" loading="lazy" decoding="async" alt="Reset Journey">
+      <div class="ji"><span class="k">Reset</span><h3>Reset Journey</h3><p>A restorative escape to melt away tension.</p>
+        <div class="price"><span class="now">₦45,900</span><span class="was">₦54,000</span><span class="save">15% OFF</span></div>
+        <span class="btn btn-light" style="align-self:flex-start">Book This Journey</span>
+      </div></a>
+    <a class="journey" href="#"><img src="{{ 'heroBeauty-800.jpg' | asset_url }}" width="800" height="533" loading="lazy" decoding="async" alt="Glow Journey">
+      <div class="ji"><span class="k">Glow</span><h3>Glow Journey</h3><p>Radiance rituals for luminous, renewed skin.</p>
+        <div class="price"><span class="now">₦65,450</span><span class="was">₦77,000</span><span class="save">15% OFF</span></div>
+        <span class="btn btn-light" style="align-self:flex-start">Book This Journey</span>
+      </div></a>
+    <a class="journey" href="#"><img src="{{ 'wellness-800.jpg' | asset_url }}" width="800" height="1009" loading="lazy" decoding="async" alt="Restore Journey">
+      <div class="ji"><span class="k">Restore</span><h3>Restore Journey</h3><p>A deep half-day of full-body renewal.</p>
+        <div class="price"><span class="now">₦91,845</span><span class="was">₦108,050</span><span class="save">15% OFF</span></div>
+        <span class="btn btn-light" style="align-self:flex-start">Book This Journey</span>
+      </div></a>
+    <a class="journey" href="#"><img src="{{ 'blog3-800.jpg' | asset_url }}" width="800" height="731" loading="lazy" decoding="async" alt="Thrive Journey">
+      <div class="ji"><span class="k">Signature</span><h3>Thrive Journey</h3><p>The ultimate ORÍKÌ indulgence — royalty, redefined.</p>
+        <div class="price"><span class="now">₦550,800</span><span class="was">₦648,000</span><span class="save">15% OFF</span></div>
+        <span class="btn btn-light" style="align-self:flex-start">Book This Journey</span>
+      </div></a>
+  </div>
+</div></section>
+
+<section class="sec" id="story"><div class="wrap">
+  <div class="split reveal">
+    <div class="media"><img src="{{ 'lagosSpa-800.jpg' | asset_url }}" width="800" height="944" loading="lazy" decoding="async" alt="ORÍKÌ farm to skin"></div>
+    <div>
+      <span class="eyebrow">Our Story</span>
+      <h2>Farm to Skin. Made in Africa.</h2>
+      <p>ORÍKÌ Group is the first and only all-natural farm-to-skin brand in Nigeria to operate a luxury wellness spa chain alongside its own product line — a distinctive universe of skincare, spas, manufacturing, training and technology.</p>
+      <p>We work relentlessly to put Africa on the map in the global skincare & wellness industry, and to popularise African Beauty — <em>A Beauty</em>.</p>
+      <div class="stat">
+        <div><b data-count="4">4</b><span>COUNTRIES</span></div>
+        <div><b data-count="15" data-suf="+">15+</b><span>LUXURY SPAS</span></div>
+        <div><b data-count="50" data-suf="+">50+</b><span>NATURAL PRODUCTS</span></div>
+        <div><b data-count="100" data-suf="%">100%</b><span>MADE IN AFRICA</span></div>
+      </div>
+      <a class="btn btn-primary" href="#">Discover the Origin</a>
+    </div>
+  </div>
+</div></section>
+
+<section class="quote">
+  <img src="{{ 'wellness-800.jpg' | asset_url }}" width="800" height="1009" loading="lazy" decoding="async" alt="">
+  <div class="qi reveal">
+    <span class="mark">“</span>
+    <blockquote>ORÍKÌ means <em>your crown</em>. Everything we create is a promise to treat you like royalty — and to put African beauty on the world stage.</blockquote>
+    <div class="who"><b>Joycee Awosika</b> · Founder &amp; CEO, ORÍKÌ Group</div>
+  </div>
+</section>
+
+<section class="locwrap" id="locations"><div class="wrap sec">
+  <div class="sec-head reveal">
+    <span class="eyebrow">Find Your Oasis</span>
+    <h2>ORÍKÌ around the world.</h2>
+    <p>From Lagos to Abu Dhabi, step into a peaceful oasis of vibrancy, luxury and relaxation.</p>
+  </div>
+  <div class="locgrid reveal">
+    <a class="loc" href="/pages/nigeria"><img src="{{ 'ng_hero-1400.jpg' | asset_url }}" width="1400" height="934" loading="lazy" decoding="async" alt="ORÍKÌ Nigeria"><span class="badge" style="background:var(--gold)">Flagship</span><div class="li"><h3>Nigeria</h3><div class="city">Lagos · Port Harcourt · Warri</div><span class="go">Explore →</span></div></a>
+    <a class="loc" href="/pages/uganda"><img src="{{ 'ug_hero-1400.jpg' | asset_url }}" width="1400" height="934" loading="lazy" decoding="async" alt="ORÍKÌ Uganda"><div class="li"><h3>Uganda</h3><div class="city">Kampala</div><span class="go">Explore →</span></div></a>
+    <a class="loc" href="/pages/kenya"><img src="{{ 'ke_hero-1400.jpg' | asset_url }}" width="1400" height="933" loading="lazy" decoding="async" alt="ORÍKÌ Kenya"><div class="li"><h3>Kenya</h3><div class="city">Nairobi · 2 branches</div><span class="go">Explore →</span></div></a>
+    <a class="loc" href="/pages/abu-dhabi"><img src="{{ 'ad_hero-1400.jpg' | asset_url }}" width="1400" height="933" loading="lazy" decoding="async" alt="ORÍKÌ Abu Dhabi"><span class="badge">Now Open</span><div class="li"><h3>Abu Dhabi</h3><div class="city">United Arab Emirates</div><span class="go">Explore →</span></div></a>
+  </div>
+</div></section>
+
+<section class="sec" id="brands"><div class="wrap">
+  <div class="sec-head reveal">
+    <span class="eyebrow">The ORÍKÌ Universe</span>
+    <h2>Our family of brands.</h2>
+  </div>
+  <div class="brandgrid reveal">
+    <a class="brand" href="https://www.getunwindapp.com/" target="_blank" rel="noopener"><div class="bi"><img src="{{ 'bUnwind-600.jpg' | asset_url }}" width="600" height="599" loading="lazy" decoding="async" alt="Unwind by ORÍKÌ"></div><div class="bn">Unwind by ORÍKÌ</div></a><a class="brand" href="/pages/our-brands#farmtoskin"><div class="bi"><img src="{{ 'bFarm-600.jpg' | asset_url }}" width="600" height="597" loading="lazy" decoding="async" alt="ORÍKÌ Farm To Skin"></div><div class="bn">ORÍKÌ Farm To Skin</div></a><a class="brand" href="https://shopanoint.com/" target="_blank" rel="noopener"><div class="bi"><img src="{{ 'bAnoint-600.jpg' | asset_url }}" width="600" height="598" loading="lazy" decoding="async" alt="Anoint"></div><div class="bn">Anoint</div></a><a class="brand" href="/pages/our-brands#dermarx"><div class="bi"><img src="{{ 'bDerma-600.jpg' | asset_url }}" width="600" height="601" loading="lazy" decoding="async" alt="Skin Derma Rx"></div><div class="bn">Skin Derma Rx</div></a>
+  </div>
+</div></section>
+
+<section class="ig sec"><div class="wrap">
+  <div class="sec-head reveal" style="align-items:center;text-align:center">
+    <span class="eyebrow">@orikigroup</span>
+    <h2>Join the ORÍKÌ Tribe.</h2>
+    <p style="margin:0 auto">Follow the rituals, the glow-ups and the movement across Africa and beyond.</p>
+  </div>
+  <div class="iggrid reveal">
+    <a href="https://www.instagram.com/orikigroup/" target="_blank"><img src="{{ 'lagosSpa-800.jpg' | asset_url }}" width="800" height="944" loading="lazy" decoding="async" alt="ORÍKÌ on Instagram"></a><a href="https://www.instagram.com/orikigroup/" target="_blank"><img src="{{ 'smile-800.jpg' | asset_url }}" width="800" height="533" loading="lazy" decoding="async" alt="ORÍKÌ on Instagram"></a><a href="https://www.instagram.com/orikigroup/" target="_blank"><img src="{{ 'massage-800.jpg' | asset_url }}" width="800" height="533" loading="lazy" decoding="async" alt="ORÍKÌ on Instagram"></a><a href="https://www.instagram.com/orikigroup/" target="_blank"><img src="{{ 'face-800.jpg' | asset_url }}" width="800" height="1200" loading="lazy" decoding="async" alt="ORÍKÌ on Instagram"></a><a href="https://www.instagram.com/orikigroup/" target="_blank"><img src="{{ 'heroBeauty-800.jpg' | asset_url }}" width="800" height="533" loading="lazy" decoding="async" alt="ORÍKÌ on Instagram"></a><a href="https://www.instagram.com/orikigroup/" target="_blank"><img src="{{ 'wellness-800.jpg' | asset_url }}" width="800" height="1009" loading="lazy" decoding="async" alt="ORÍKÌ on Instagram"></a>
+  </div>
+  <div style="text-align:center;margin-top:26px" class="reveal"><a class="btn btn-terra" href="https://www.instagram.com/orikigroup/" target="_blank"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="1"/></svg> Follow @orikigroup</a></div>
+</div></section>
+
+<section class="sec" id="blog" style="background:var(--sand)"><div class="wrap">
+  <div class="sec-head reveal"><span class="eyebrow">The Journal</span><h2>Wellness notes &amp; rituals.</h2></div>
+  <div class="bloggrid reveal">
+  {%- assign jb = blogs['news'] | default: blogs.first -%}
+  {%- for article in jb.articles limit: 3 -%}
+    <a class="post" href="{{ article.url }}"><div class="pimg">{% if article.image %}{{ article.image | image_url: width: 600 | image_tag: loading: 'lazy', alt: article.title }}{% endif %}</div><div class="pc"><span class="cat">{{ article.tags.first | default: 'Journal' }}</span><h3>{{ article.title }}</h3><span class="rm">Read article →</span></div></a>
+  {%- endfor -%}
+  </div>
+</div></section>
+
+<section class="sec" id="partner" style="background:var(--sand)"><div class="wrap">
+  <div class="sec-head reveal"><span class="eyebrow">Grow With ORÍKÌ</span><h2>Become an ORÍKÌ partner.</h2>
+  <p>From spa franchises to private-label manufacturing, build with Africa's leading wellness house — we guide you every step of the way.</p></div>
+  <div class="svc reveal">
+    <div class="s"><div class="em"><svg viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg></div><h4>Franchise</h4><p>Open your own ORÍKÌ spa — we guide you from concept to launch.</p></div>
+    <div class="s"><div class="em"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.5-9-9C1.5 7 4 4 7 4c2 0 3.5 1.5 5 3 1.5-1.5 3-3 5-3 3 0 5.5 3 4 7-2 4.5-9 9-9 9z"/></svg></div><h4>Training Institute</h4><p>Certified spa & skincare training for aspiring professionals.</p></div>
+    <div class="s"><div class="em"><svg viewBox="0 0 24 24"><path d="M5 19c8 0 14-5 14-14C9 5 5 11 5 19z"/><path d="M5 19c2-5 6-8 10-9"/></svg></div><h4>Manufacturing</h4><p>Private-label & contract manufacturing, from farm to shelf.</p></div>
+    <div class="s"><div class="em"><svg class="ic" viewBox="0 0 24 24"><path d="M6 8h12l-1 13H7L6 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg></div><h4>Wholesale & Retail</h4><p>Stock ORÍKÌ with competitive rates and marketing support.</p></div>
+  </div>
+  <div style="text-align:center;margin-top:30px" class="reveal"><a class="btn btn-primary" href="#">Explore Partnerships</a></div>
+</div></section>
+
+<section class="sec"><div class="wrap"><div class="news reveal"><div class="in">
+  <h2>Join the ORÍKÌ Tribe</h2>
+  <p>Get DIY tutorials, wellness tips & exclusive offers — and be first to know when we open near you.</p>
+  {%- form 'customer' -%}<input type="hidden" name="contact[tags]" value="newsletter"><input type="email" name="contact[email]" placeholder="Enter your email" required aria-label="Email"><button class="btn btn-terra" type="submit">Subscribe</button>{%- endform -%}
+</div></div></div></section>
+
+
+
+{% schema %}
+{"name":"ORÍKÌ Home","settings":[],"presets":[{"name":"ORÍKÌ Home"}]}
+{% endschema %}

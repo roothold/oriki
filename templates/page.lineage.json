@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "main": {
+      "type": "oriki-lineage",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
