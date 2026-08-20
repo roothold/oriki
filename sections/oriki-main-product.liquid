@@ -5,7 +5,7 @@
     <div class="pdp-gallery reveal">
       <div class="main">
         {%- if product.tags contains 'Bestseller' or product.tags contains 'Besteller' -%}
-          <div class="pdp-badges"><span class="tag" style="background:var(--sage);color:var(--forest);font-size:.62rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:5px 10px;border-radius:100px">Bestseller</span></div>
+          <div class="pdp-badges"><span class="tag" style="background:var(--sage);color:var(--forest);font-size:0.992rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:5px 10px;border-radius:100px">Bestseller</span></div>
         {%- endif -%}
         {%- if product.featured_image -%}
           <img id="pdpMain" src="{{ product.featured_image | image_url: width: 900 }}" alt="{{ product.title | escape }}" width="900" height="900">
@@ -36,7 +36,7 @@
       {%- form 'product', product -%}
         {%- if product.variants.size > 1 -%}
           <div style="margin-bottom:14px">
-            <label style="font-size:.8rem;font-weight:600;display:block;margin-bottom:6px">Choose an option</label>
+            <label style="font-size:1.28rem;font-weight:600;display:block;margin-bottom:6px">Choose an option</label>
             <select name="id" id="pdpVariant" style="max-width:320px;padding:12px 14px;border:1.5px solid var(--line);border-radius:12px;font-family:var(--sans);background:var(--white)">
               {%- for variant in product.variants -%}
                 <option value="{{ variant.id }}" data-price="{{ variant.price | money }}" {% if variant == product.selected_or_first_available_variant %}selected{% endif %} {% unless variant.available %}disabled{% endunless %}>
