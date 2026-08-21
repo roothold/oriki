@@ -522,3 +522,11 @@ footer.site{background:var(--ink);color:#cfc8ba;padding:42px 0 0;font-size:1.36r
 .ecoart:after{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,var(--sand) 0%,rgba(247,242,233,.80) 14%,rgba(247,242,233,.78) 50%,rgba(247,242,233,.80) 86%,var(--sand) 100%)}
 .ecoart>section{position:relative;z-index:2;background:transparent}
 .ecoart .fic{background:rgba(255,255,255,.55);backdrop-filter:blur(2px)}
+
+/* --- Hero flash polish: brand-tone base so images don't flash gray --- */
+.hero{background:var(--forest)}
+.pagehero,.subhero{background:#20261c}
+/* --- Lineage crown hero (premium faded emblem) --- */
+.linhero{background:#1a140c}
+.linhero .bg{object-position:center 44%}
+.linhero:after{background:linear-gradient(100deg,rgba(19,14,8,.92) 0%,rgba(22,16,9,.62) 42%,rgba(28,21,12,.34) 72%,rgba(34,26,15,.44) 100%),linear-gradient(180deg,rgba(22,16,9,.1) 28%,rgba(14,10,6,.74) 100%)}
