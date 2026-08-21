@@ -1,0 +1,62 @@
+{%- comment -%} ORÍKÌ blog index — premium editorial layout {%- endcomment -%}
+{%- paginate blog.articles by 12 -%}
+<section class="pagehero" style="min-height:320px">
+  <img class="bg" src="{{ 'wellness-1200.jpg' | asset_url }}" style="object-position:50% 42%" alt="{{ blog.title | escape }}">
+  <div class="inner">
+    <span class="eyebrow">The Journal</span>
+    <h1>{{ blog.title }}</h1>
+    <p>Wellness notes, rituals and stories from the ORÍKÌ world.</p>
+  </div>
+</section>
+<div class="wrap"><div class="crumbs"><a href="/">Home</a> / {{ blog.title }}</div></div>
+
+<section class="sec" style="padding-top:26px"><div class="wrap">
+  {%- if blog.articles.size > 0 -%}
+    {%- if paginate.current_page == 1 -%}
+      {%- assign feat = blog.articles.first -%}
+      <a class="feat-post reveal" href="{{ feat.url }}">
+        <div class="feat-img">
+          {%- if feat.image -%}{{ feat.image | image_url: width: 1200 | image_tag: loading: 'eager', widths: '600,900,1200', alt: feat.title }}
+          {%- else -%}<span class="ph-mark">ORÍKÌ</span>{%- endif -%}
+        </div>
+        <div class="feat-body">
+          <span class="cat">{{ feat.tags.first | default: 'Journal' }}</span>
+          <h2>{{ feat.title }}</h2>
+          <p>{{ feat.excerpt | default: feat.content | strip_html | truncatewords: 34 }}</p>
+          <div class="feat-meta">{% if feat.author != blank %}{{ feat.author }} · {% endif %}{{ feat.published_at | date: '%B %-d, %Y' }}</div>
+          <span class="rm">Read article →</span>
+        </div>
+      </a>
+    {%- endif -%}
+
+    <div class="bloggrid reveal" style="margin-top:46px">
+      {%- for article in blog.articles -%}
+        {%- unless paginate.current_page == 1 and forloop.first -%}
+          <a class="post" href="{{ article.url }}">
+            <div class="pimg">
+              {%- if article.image -%}{{ article.image | image_url: width: 600 | image_tag: loading: 'lazy', widths: '300,600', alt: article.title }}
+              {%- else -%}<span class="ph-mark">ORÍKÌ</span>{%- endif -%}
+            </div>
+            <div class="pc">
+              <span class="cat">{{ article.tags.first | default: 'Journal' }}</span>
+              <h3>{{ article.title }}</h3>
+              <span class="post-date">{{ article.published_at | date: '%B %-d, %Y' }}</span>
+              <span class="rm">Read article →</span>
+            </div>
+          </a>
+        {%- endunless -%}
+      {%- endfor -%}
+    </div>
+
+    {%- if paginate.pages > 1 -%}
+      <div style="text-align:center;margin-top:44px" class="reveal">{{ paginate | default_pagination }}</div>
+    {%- endif -%}
+  {%- else -%}
+    <p style="color:var(--muted);padding:30px 0">No articles here yet — check back soon.</p>
+  {%- endif -%}
+</div></section>
+{%- endpaginate -%}
+
+{% schema %}
+{"name":"ORÍKÌ Blog","settings":[]}
+{% endschema %}
