@@ -4,7 +4,7 @@
   {%- if collection.image -%}
     <img class="bg" src="{{ collection.image | image_url: width: 1600 }}" alt="{{ collection.title | escape }}">
   {%- else -%}
-    <img class="bg" src="{{ 'wellness-1200.jpg' | asset_url }}" alt="{{ collection.title | escape }}">
+    <picture><source type="image/webp" srcset="{{ 'shop-hero-1400.webp' | asset_url }} 1400w, {{ 'shop-hero-2000.webp' | asset_url }} 2000w" sizes="100vw"><img class="bg" src="{{ 'shop-hero-2000.jpg' | asset_url }}" srcset="{{ 'shop-hero-1400.jpg' | asset_url }} 1400w, {{ 'shop-hero-2000.jpg' | asset_url }} 2000w" sizes="100vw" style="object-position:50% 30%" alt="{{ collection.title | escape }}"></picture>
   {%- endif -%}
   <div class="inner">
     <span class="eyebrow">Shop ORÍKÌ</span>
