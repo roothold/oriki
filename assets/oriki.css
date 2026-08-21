@@ -115,11 +115,12 @@ header.site{position:sticky;top:0;z-index:50;background:rgba(255,253,249,.86);ba
 .hero{position:relative;min-height:92vh;display:flex;align-items:flex-end;color:#fff;overflow:hidden}
 .hero .bg{position:absolute;inset:0}
 .hero .bg img{width:100%;height:100%;object-fit:cover}
-.hero .bg:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(28,32,24,.15) 0%,rgba(28,32,24,.1) 40%,rgba(24,28,20,.82) 100%)}
+.hero .bg:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(24,28,18,.18) 0%,rgba(24,28,18,.12) 34%,rgba(18,22,12,.62) 78%,rgba(16,20,10,.9) 100%)}
 .hero .inner{position:relative;z-index:2;width:100%;padding:0 20px 64px;max-width:var(--wrap);margin:0 auto}
 .hero .eyebrow{color:var(--blush)}
-.hero h1{font-size:clamp(4.32rem,11vw,9.92rem);margin:14px 0 8px;max-width:16ch}
-.hero p.sub{font-size:clamp(1.6rem,4.5vw,2.08rem);max-width:34ch;color:rgba(255,255,255,.9);margin-bottom:26px}
+.hero h1{font-size:clamp(4.32rem,11vw,9.92rem);margin:14px 0 8px;max-width:16ch;color:#fff;text-shadow:0 2px 34px rgba(16,20,12,.45)}
+.hero .inner .eyebrow{text-shadow:0 1px 18px rgba(16,20,12,.4)}
+.hero p.sub{font-size:clamp(1.6rem,4.5vw,2.08rem);max-width:34ch;color:#fff;margin-bottom:26px;text-shadow:0 2px 24px rgba(16,20,12,.5)}
 .hero .cta{display:flex;flex-wrap:wrap;gap:12px}
 .hero-dots{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:3}
 .hero-dots i{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.45);transition:.3s}
@@ -502,3 +503,22 @@ footer.site{background:var(--ink);color:#cfc8ba;padding:42px 0 0;font-size:1.36r
 .founder-dark .founder-quote em{color:var(--gold)}
 .founder-dark .prose p{color:#d9d2c2}
 .founder-dark h2{color:#fff}
+
+/* --- Premium brands hero --- */
+.brandhero{position:relative;overflow:hidden;color:var(--cream);padding:clamp(72px,11vw,128px) 0 clamp(56px,8vw,96px);background:radial-gradient(130% 130% at 82% -10%, #3b4d34 0%, #2c3a2e 46%, #18231715 100%),linear-gradient(180deg,#26331f,#1a2519)}
+.brandhero:before{content:'';position:absolute;top:-35%;right:-8%;width:62%;height:130%;background:radial-gradient(circle,rgba(176,138,78,.30),transparent 62%);pointer-events:none}
+.brandhero-mark{position:absolute;right:-2%;bottom:-20%;font-family:var(--serif);font-weight:400;font-size:clamp(13rem,32vw,32rem);line-height:.8;color:#fff;opacity:.045;letter-spacing:-.02em;pointer-events:none;user-select:none;white-space:nowrap}
+.brandhero-in{position:relative;z-index:2;max-width:660px}
+.brandhero-in .eyebrow{color:var(--gold)}
+.brandhero-in h1{font-family:var(--serif);font-weight:500;font-size:clamp(3.6rem,7vw,6rem);line-height:1.03;margin:14px 0 16px;color:#fff;letter-spacing:-.01em}
+.brandhero-in p{color:rgba(247,242,233,.82);font-size:1.6rem;line-height:1.6;max-width:48ch}
+.brandhero-list{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-top:30px;padding-top:24px;border-top:1px solid rgba(255,255,255,.14)}
+.brandhero-list span{font-size:1.24rem;letter-spacing:.14em;text-transform:uppercase;color:var(--blush);font-weight:500}
+.brandhero-list b{color:var(--gold);font-weight:400}
+
+/* --- Ecosystem section: faded artwork backdrop --- */
+.ecoart{position:relative}
+.ecoart:before{content:'';position:absolute;inset:0;z-index:0;background-image:url('eco-art-2000.jpg');background-image:image-set(url('eco-art-2000.webp') type('image/webp'),url('eco-art-2000.jpg') type('image/jpeg'));background-size:cover;background-position:center;background-repeat:no-repeat}
+.ecoart:after{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,var(--sand) 0%,rgba(247,242,233,.80) 14%,rgba(247,242,233,.78) 50%,rgba(247,242,233,.80) 86%,var(--sand) 100%)}
+.ecoart>section{position:relative;z-index:2;background:transparent}
+.ecoart .fic{background:rgba(255,255,255,.55);backdrop-filter:blur(2px)}
